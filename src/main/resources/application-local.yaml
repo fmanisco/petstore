@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb2;INIT=RUNSCRIPT FROM 'classpath:schema-h2.sql'\;RUNSCRIPT FROM 'classpath:schema-h2-insert.sql'
+    initialization-mode: never
+    driverClassName: org.h2.Driver
+    username: as
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri: https://dev-69837733.okta.com/oauth2/default
+spring.security.oauth2.resourceserver.jwt.user-info-uri: https://dev-69837733.okta.com/oauth2/default/v1/userinfo
+
+beccaria.security.endpoint.block: true
+
+# da utilizzare in fase di sviluppo
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.action: drop-and-create
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.create-source: metadata 
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target: ../h2-create-schema-petstore.sql
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.drop-source: script
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.drop-target: ../h2-drop-schema-petstore.sql
+#spring.jpa.properties.hibernate.hbm2ddl.delimiter: ;    
+
+
+

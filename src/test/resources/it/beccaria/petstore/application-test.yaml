@@ -1,0 +1,44 @@
+
+
+
+# H2 MEMORY DB
+spring.datasource.url: jdbc:h2:mem:testdb2;INIT=RUNSCRIPT FROM 'classpath:schema-test.sql'
+spring.datasource.driverClassName: org.h2.Driver
+spring.datasource.username: as
+spring.datasource.password:
+spring.jpa.hibernate.ddl-auto: none
+spring.jpa.show-sql: true
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
+spring:
+  datasource:
+    initialization-mode: never
+  
+  datasource-sic:
+   initialization-mode: never
+   url: jdbc:h2:mem:testdb2-sic;
+   driverClassName: org.h2.Driver
+   username: as
+   password:
+  
+  
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    
+#SQL LOGGING
+logging.level.org.hibernate.SQL: DEBUG
+
+logging:
+  pattern:
+    console: '%d{ISO8601} %highlight(%-5level) [%green(%t)] %magenta(%C{1.}) [%cyan(%X)]: %msg%n%throwable'
+
+beccaria.security.endpoint.block: false
+spring.security.oauth2.resourceserver.jwt.issuer-uri: https://dev-69837733.okta.com/oauth2/default
+security.oauth2.client.client-id: 0oa17o0aifTUEOl3O5d7
+security.oauth2.client.client-secret: Ulxi39mewiiZNO4S-prr0Ov8Ov-anR8tUdMLzNCC
+security.oauth2.client.access-token-uri: https://dev-69837733.okta.com/oauth2/default/v1/token
+security.oauth2.client.user-authorization-uri: https://dev-69837733.okta.com/oauth2/default/v1/authorize
+spring.security.oauth2.resourceserver.jwt.user-info-uri: https://dev-69837733.okta.com/oauth2/default/v1/userinfo
+#spring.security.oauth2.resourceserver.jwt.issuer-uri: https://dev-562912.okta.com/oauth2/v1/authorize

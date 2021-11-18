@@ -1,0 +1,19 @@
+# OracleDB connection settings
+spring: 
+  datasource: 
+    initialization-mode: never
+#    url: jdbc:oracle:thin:@//oracle-db.giustizia-dev.it:1521/orclpdb1XXX
+    url: jdbc:oracle:thin:@//localhost:1522/orcl
+    username: petstore
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate: 
+      use-new-id-generator-mappings: false
+      ddl-auto: update
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri: https://dev-69837733.okta.com/oauth2/default
+spring.security.oauth2.resourceserver.jwt.user-info-uri: https://dev-69837733.okta.com/oauth2/default/v1/userinfo
+
+beccaria.security.endpoint.block: true
+

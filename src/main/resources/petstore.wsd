@@ -1,0 +1,73 @@
+@startuml richiesta-intervento
+skinparam linetype ortho
+'left to right direction
+scale 4096 width
+scale 4096 height
+
+package petstore {
+
+    
+    class Petstore {
+       Long id;
+       Titolare
+       Collection<Cane> cani;
+       Collection<Gatto> gatti;
+       Collection<Pesce> pesci;
+    }
+     
+
+    class Pet {
+       Long id;
+       String nome;
+       Long eta;
+    }
+
+   class Cane extends Pet{
+        TipoCane
+        TipoSesso
+        Boolean addestrato;
+    }
+   
+   class Gatto extends Pet{
+        TipoGatto
+        TipoSesso
+        Boolean graffiante;
+    }
+   
+   class Pesce extends Pet{
+       Long lunghezza;
+       Boolean tropicale;
+    }
+   
+   class Titolare {
+       Long id;
+    }
+   
+
+
+    class TipoCane {}
+    class TipoGatto {}
+    class TipoSesso {}
+  
+    Petstore -- Titolare
+    Petstore --{ Cane
+    Petstore --{ Gatto
+    Petstore --{ Pesce
+
+    Cane }-- TipoCane
+    Cane }-- TipoSesso
+
+    Gatto }-- TipoGatto
+    Gatto }-- TipoSesso
+
+
+}
+
+
+  
+
+
+/'
+   '/
+
+@enduml
