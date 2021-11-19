@@ -28,7 +28,7 @@ public class Gatto extends Pet {
 	private static final long serialVersionUID = 1680837068816278779L;
 
 	@Basic
-    Boolean graffiante;
+    Boolean senzaCoda;
 
 	@ManyToOne
 	@JoinColumn(name = "TIPO_GATTO_ID")

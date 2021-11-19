@@ -38,7 +38,7 @@ public class Titolare implements BeccariaIdEntity<Long> {
 	private String nome;
 
 	@Basic
-	private String cognomenome;
+	private String cognome;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PETSTORE_ID")

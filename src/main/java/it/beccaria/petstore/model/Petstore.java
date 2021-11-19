@@ -2,6 +2,7 @@ package it.beccaria.petstore.model;
 
 import java.util.Collection;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +34,15 @@ public class Petstore implements BeccariaIdEntity<Long> {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Basic
+    private String nome;
+
+	@Basic
+    private String insegna;
+
+	@Basic
+    private String indirizzo;
 
 	@OneToOne(mappedBy = "petstore", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Titolare titolare;

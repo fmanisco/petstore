@@ -49,5 +49,8 @@ public class Pet implements BeccariaIdEntity<Long> {
 	@JoinColumn(name = "PETSTORE_ID")
 	private Petstore petstore;
 
+	@ManyToOne
+	@JoinColumn(name = "TIPO_PET_ID")
+	private TipoPet tipoPet;
 
 }
